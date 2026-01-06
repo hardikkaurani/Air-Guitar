@@ -2,7 +2,7 @@
 
 ## About the Project
 This project is called **Air Guitar**.  
-The idea behind this project is simple — to play guitar sounds using **hand gestures** instead of a real guitar.
+The idea behind this project is simple - to play guitar sounds using **hand gestures** instead of a real guitar.
 
 Using a webcam, the system detects hand movements in real time and plays guitar sounds based on finger positions.  
 No physical instrument is required. Everything works through computer vision.
