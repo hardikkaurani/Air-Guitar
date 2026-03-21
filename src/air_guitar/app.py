@@ -1,23 +1,14 @@
-"""
-Production-grade Air Guitar System
-Real-time gesture-to-audio synthesis with advanced features
-"""
+"""Production-grade Air Guitar application entrypoint."""
 import time
 import signal
 import yaml
 import sys
-from pathlib import Path
 
-from core.audio_engine import AudioEngine
-from core.sensor_handler import SensorHandler
-from core.chord_engine import ChordEngine
-from core.exceptions import (
-    AirGuitarException, 
-    SerialConnectionError, 
-    SensorCalibrationError,
-    ConfigurationError
-)
-from utils.logger import setup_logger
+from .core.audio_engine import AudioEngine
+from .core.sensor_handler import SensorHandler
+from .core.chord_engine import ChordEngine
+from .core.exceptions import ConfigurationError
+from .utils.logger import setup_logger
 
 logger = setup_logger(__name__)
 
@@ -36,7 +27,7 @@ class AirGuitarSystem:
     - Chord detection
     """
     
-    def __init__(self, config_path: str = "config.yaml"):
+    def __init__(self, config_path: str = "config/config.yaml"):
         """Initialize the system from config file."""
         self.config = self._load_config(config_path)
         
@@ -109,7 +100,7 @@ class AirGuitarSystem:
             # Web Controller (optional)
             if self.config.get('web', {}).get('enabled', False):
                 logger.info("Initializing web controller...")
-                from web.controller import WebController
+                from .web.controller import WebController
                 web_config = self.config['web']
                 self.web_controller = WebController(
                     host=web_config.get('host', '127.0.0.1'),
@@ -269,12 +260,12 @@ def main():
     """Entry point."""
     print_banner()
     
-    system = AirGuitarSystem(config_path="config.yaml")
+    system = AirGuitarSystem(config_path="config/config.yaml")
     
     if not system.initialize():
         print("\n❌ Initialization failed. Check:")
         print("   - Arduino is connected and on correct COM port")
-        print("   - config.yaml exists and has correct settings")
+        print("   - config/config.yaml exists and has correct settings")
         print("   - All sensors are calibrated")
         sys.exit(1)
     

@@ -7,7 +7,7 @@ Verify all features work correctly.
 ### Running All Tests
 
 ```bash
-cd air-guitar-production
+cd .
 
 # Run all unit tests
 python -m pytest tests/ -v
@@ -45,9 +45,9 @@ Verify end-to-end audio generation:
 ```python
 # test_sensor_to_audio.py
 import numpy as np
-from core.sensor_handler import SensorHandler
-from core.audio_engine import AudioEngine
-from core.chord_engine import ChordEngine
+from src.air_guitar.core.sensor_handler import SensorHandler
+from src.air_guitar.core.audio_engine import AudioEngine
+from src.air_guitar.core.chord_engine import ChordEngine
 
 def test_sensor_to_audio():
     # Setup
@@ -87,7 +87,7 @@ Verify effects chain works correctly:
 ```python
 # test_effects_integration.py
 import numpy as np
-from core.effects import EffectsChain
+from src.air_guitar.core.effects import EffectsChain
 
 def test_effects_chain():
     effects = EffectsChain()
@@ -125,7 +125,7 @@ Verify MIDI messages are sent correctly:
 
 ```python
 # test_midi_integration.py
-from core.midi_output import MIDIOutput
+from src.air_guitar.core.midi_output import MIDIOutput
 
 def test_midi_output():
     midi = MIDIOutput(device_index=None)
@@ -158,7 +158,7 @@ Verify WAV file recording:
 # test_recording_integration.py
 import numpy as np
 import os
-from core.recorder import AudioRecorder
+from src.air_guitar.core.recorder import AudioRecorder
 import soundfile as sf
 
 def test_recording():
@@ -271,7 +271,7 @@ Monitor system performance while playing:
 # performance_test.py
 import psutil
 import time
-from core.audio_engine import AudioEngine
+from src.air_guitar.core.audio_engine import AudioEngine
 
 def test_cpu_usage():
     engine = AudioEngine(sample_rate=44100, max_voices=8)
@@ -319,7 +319,7 @@ test_cpu_usage()
 ```python
 # memory_test.py
 import tracemalloc
-from core.audio_engine import AudioEngine
+from src.air_guitar.core.audio_engine import AudioEngine
 
 def test_memory_usage():
     tracemalloc.start()
@@ -367,7 +367,7 @@ Measure audio latency:
 # latency_test.py
 import numpy as np
 import time
-from core.audio_engine import AudioEngine
+from src.air_guitar.core.audio_engine import AudioEngine
 
 def test_audio_latency():
     engine = AudioEngine(sample_rate=44100, max_voices=1)
@@ -410,8 +410,8 @@ Push system to limits:
 ```python
 # stress_test.py
 import numpy as np
-from core.audio_engine import AudioEngine
-from core.effects import EffectsChain
+from src.air_guitar.core.audio_engine import AudioEngine
+from src.air_guitar.core.effects import EffectsChain
 
 def stress_test():
     print("Starting stress test...")
@@ -491,7 +491,7 @@ jobs:
 
 After deploying to production:
 
-1. ✓ Run QUICKSTART.md steps
+1. ✓ Run quickstart.md steps
 2. ✓ Test all features in manual checklist
 3. ✓ Monitor CPU/memory for 24 hours
 4. ✓ Test recording with long sessions (>1 hour)
@@ -513,9 +513,11 @@ handler.start()
 **Workaround**: Reduce buffer size or disable reverb room_size > 0.8
 
 ### Issue: MIDI notes don't send to DAW
-**Workaround**: Check DAW MIDI input routing and enable in config.yaml
+**Workaround**: Check DAW MIDI input routing and enable in config/config.yaml
 
 ---
 
 **All tests passing? System is production-ready!**
+
+
 

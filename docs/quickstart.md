@@ -12,7 +12,7 @@ Get Air Guitar running in 5 minutes.
 ## Step 1: Install Dependencies (1 minute)
 
 ```bash
-cd c:\Users\hardi\Downloads\Air-Guitar-main\air-guitar-production
+cd c:\Users\hardi\Downloads\Air-Guitar-main\pr-main-based
 
 # Create virtual environment (first time only)
 python -m venv venv
@@ -62,10 +62,10 @@ ls /dev/ttyUSB*
 
 ## Step 3: Configure Arduino Port (1 minute)
 
-Edit `config.yaml` in the air-guitar-production folder:
+Edit `config/config.yaml` in the repository root:
 
 ```yaml
-# config.yaml - Update this line with YOUR Arduino port
+# config/config.yaml - Update this line with YOUR Arduino port
 serial:
   port: "COM3"                    # Change COM3 to your actual port!
   baudrate: 115200
@@ -76,7 +76,7 @@ Test the connection:
 
 ```bash
 python -c "
-from core.sensor_handler import SensorHandler
+from src.air_guitar.core.sensor_handler import SensorHandler
 handler = SensorHandler('COM3', 115200)  # Use YOUR port
 handler.start()
 import time; time.sleep(2)
@@ -171,7 +171,7 @@ python main.py
 ```bash
 # Verify sensor data
 python -c "
-from core.sensor_handler import SensorHandler
+from src.air_guitar.core.sensor_handler import SensorHandler
 h = SensorHandler('COM3')
 h.start()
 import time; time.sleep(1)
@@ -195,7 +195,7 @@ print(sd.query_devices())  # Find your speaker/headphones
 2. Wait 5 seconds
 3. Plug back in
 4. Check COM port in Device Manager
-5. Update config.yaml if port changed
+5. Update config/config.yaml if port changed
 
 ### Web Dashboard Not Loading
 
@@ -204,7 +204,7 @@ print(sd.query_devices())  # Find your speaker/headphones
 3. Some firewalls block port 5000—try port 8000:
    ```yaml
    web:
-     port: 8000  # In config.yaml
+     port: 8000  # In config/config.yaml
    ```
 
 ---
@@ -216,7 +216,7 @@ Once playing:
 ### Record Your Performance
 
 ```yaml
-# In config.yaml
+# In config/config.yaml
 recording:
   auto_record: false
   output_folder: "./recordings"
@@ -227,7 +227,7 @@ Then click "Start Recording" in web UI. Files save with timestamps:
 
 ### Use Different Instruments
 
-Switch in web UI or config.yaml:
+Switch in web UI or config/config.yaml:
 - **Classic Guitar** (warm, traditional)
 - **Acoustic Guitar** (full body)
 - **Electric Guitar** (bright, punchy)
@@ -236,7 +236,7 @@ Switch in web UI or config.yaml:
 
 ### Send MIDI to DAW
 
-Enable in config.yaml:
+Enable in config/config.yaml:
 ```yaml
 midi:
   enabled: true
@@ -339,9 +339,9 @@ If you hear glitching or dropout:
 
 Once comfortable:
 
-1. Read [FEATURES.md](FEATURES.md) for advanced features
-2. Read [ARCHITECTURE.md](ARCHITECTURE.md) to understand the system
-3. Read [API.md](API.md) for programming examples
+1. Read [features.md](features.md) for advanced features
+2. Read [architecture.md](architecture.md) to understand the system
+3. Read [api.md](api.md) for programming examples
 4. Check [README.md](README.md) for full documentation
 
 ---
@@ -352,14 +352,16 @@ Once comfortable:
 |------|---------|
 | Start | `python main.py` |
 | Stop | Ctrl+C |
-| Test Sensor | `python -c "from core.sensor_handler import SensorHandler; ..."` |
-| Test Audio | `python -c "from core.audio_engine import AudioEngine; ..."` |
+| Test Sensor | `python -c "from src.air_guitar.core.sensor_handler import SensorHandler; ..."` |
+| Test Audio | `python -c "from src.air_guitar.core.audio_engine import AudioEngine; ..."` |
 | List Ports | `python -m serial.tools.list_ports` |
-| View Config | `cat config.yaml` |
+| View Config | `cat config/config.yaml` |
 
 ---
 
 **Done! You're now ready to jam. 🎸**
 
-Need help? Check [README.md](README.md) or [FEATURES.md](FEATURES.md).
+Need help? Check [README.md](README.md) or [features.md](features.md).
+
+
 

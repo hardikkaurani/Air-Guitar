@@ -97,7 +97,7 @@ web/
 └── static/                 - CSS/JS (future expansion)
 
 main.py                      (200 lines) - System controller, event loop
-config.yaml                  - User configuration (instruments, effects, etc.)
+config/config.yaml                  - User configuration (instruments, effects, etc.)
 ```
 
 ## Key Design Patterns
@@ -282,4 +282,5 @@ engine.midi.note_off()
 ---
 
 **This architecture scales to thousands of lines of code while maintaining clarity and performance.**
+
 

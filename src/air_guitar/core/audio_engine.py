@@ -12,7 +12,7 @@ from .effects import EffectsChain
 from .instrument_models import InstrumentFactory
 from .midi_output import MIDIOutput
 from .recorder import AudioRecorder
-from utils.logger import setup_logger
+from ..utils.logger import setup_logger
 
 logger = setup_logger(__name__)
 
@@ -287,4 +287,3 @@ class AudioEngine:
         """Get number of currently active voices."""
         with self.voice_lock:
             return len(self.voices)
-

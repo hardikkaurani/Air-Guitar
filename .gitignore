@@ -1,0 +1,9 @@
+__pycache__/
+*.pyc
+.pytest_cache/
+.coverage
+air_guitar.log
+recordings/
+dist/
+build/
+*.egg-info/

@@ -1,7 +1,7 @@
 """Unit tests for audio engine."""
 import unittest
 import numpy as np
-from core.audio_engine import AudioEngine, Voice
+from src.air_guitar.core.audio_engine import AudioEngine, Voice
 
 class TestAudioEngine(unittest.TestCase):
     """Test audio synthesis and voice management."""

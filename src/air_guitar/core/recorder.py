@@ -6,7 +6,7 @@ from datetime import datetime
 import logging
 from typing import Optional
 
-from utils.logger import setup_logger
+from ..utils.logger import setup_logger
 
 logger = setup_logger(__name__)
 

@@ -14,7 +14,7 @@ Quick overview of all documentation files and what each covers.
   - Feature summary
   - Support matrix
 
-### **QUICKSTART.md** ⭐ START HERE
+### **quickstart.md** ⭐ START HERE
 - **Purpose**: Get up and running in 5 minutes
 - **Audience**: Beginners, any background
 - **Length**: 5-10 minutes
@@ -25,7 +25,7 @@ Quick overview of all documentation files and what each covers.
   - First performance (1 min)
   - Common troubleshooting
 
-### **FEATURES.md**
+### **features.md**
 - **Purpose**: Learn what the system can do
 - **Audience**: Users wanting to explore capabilities
 - **Length**: 30 minutes
@@ -37,7 +37,7 @@ Quick overview of all documentation files and what each covers.
   - Troubleshooting for each feature
   - Example setups (production, high-performance, studio)
 
-### **ARCHITECTURE.md**
+### **architecture.md**
 - **Purpose**: Understand how the system works
 - **Audience**: Developers, technical people
 - **Length**: 45 minutes
@@ -51,7 +51,7 @@ Quick overview of all documentation files and what each covers.
   - Testing strategy
   - Code archaeology
 
-### **API.md**
+### **api.md**
 - **Purpose**: Complete function-by-function reference
 - **Audience**: Developers writing code
 - **Length**: 60 minutes (reference material)
@@ -63,7 +63,7 @@ Quick overview of all documentation files and what each covers.
   - Integration examples
   - Complete system integration example
 
-### **TESTING.md**
+### **testing.md**
 - **Purpose**: Verify system works correctly
 - **Audience**: QA engineers, developers
 - **Length**: 30 minutes
@@ -76,7 +76,7 @@ Quick overview of all documentation files and what each covers.
   - CI/CD setup example
   - Known issues and workarounds
 
-### **PRODUCTION.md**
+### **production.md**
 - **Purpose**: Deploy to real-world use
 - **Audience**: DevOps, system administrators
 - **Length**: 45 minutes
@@ -100,9 +100,9 @@ Quick overview of all documentation files and what each covers.
 ```
 README.md (5 min overview)
           ↓
-QUICKSTART.md (install & first play)
+quickstart.md (install & first play)
           ↓
-FEATURES.md (learn capabilities)
+features.md (learn capabilities)
           ↓
 Have fun! 🎸
 ```
@@ -111,33 +111,33 @@ Have fun! 🎸
 ```
 README.md (overview)
           ↓
-QUICKSTART.md (setup)
+quickstart.md (setup)
           ↓
-ARCHITECTURE.md (understand design)
+architecture.md (understand design)
           ↓
-API.md (learn interfaces)
+api.md (learn interfaces)
           ↓
-TESTING.md (verify)
+testing.md (verify)
           ↓
 Extend code!
 ```
 
 ### For DevOps
 ```
-QUICKSTART.md (understand what it is)
+quickstart.md (understand what it is)
           ↓
-TESTING.md (pre-flight checks)
+testing.md (pre-flight checks)
           ↓
-PRODUCTION.md (deployment strategies)
+production.md (deployment strategies)
           ↓
 Deploy!
 ```
 
 ### For Linux/System Admins
 ```
-QUICKSTART.md (setup)
+quickstart.md (setup)
           ↓
-PRODUCTION.md (containerization, monitoring)
+production.md (containerization, monitoring)
           ↓
 Set up monitoring and auto-restart
 ```
@@ -147,28 +147,28 @@ Set up monitoring and auto-restart
 ## 🎯 Finding Answers
 
 **"How do I...?"**
-→ [QUICKSTART.md](QUICKSTART.md) - 80% of questions answered here
+→ [quickstart.md](quickstart.md) - 80% of questions answered here
 
 **"What can I do?"**
-→ [FEATURES.md](FEATURES.md) - Every capability explained
+→ [features.md](features.md) - Every capability explained
 
 **"How does it work?"**
-→ [ARCHITECTURE.md](ARCHITECTURE.md) - System design and patterns
+→ [architecture.md](architecture.md) - System design and patterns
 
 **"How do I use this API?"**
-→ [API.md](API.md) - Every function documented with examples
+→ [api.md](api.md) - Every function documented with examples
 
 **"Is it working?"**
-→ [TESTING.md](TESTING.md) - Unit tests, integration tests, checklists
+→ [testing.md](testing.md) - Unit tests, integration tests, checklists
 
 **"How do I deploy?"**
-→ [PRODUCTION.md](PRODUCTION.md) - All deployment scenarios
+→ [production.md](production.md) - All deployment scenarios
 
 **"Why doesn't X work?"**
-→ [FEATURES.md](FEATURES.md) troubleshooting section
+→ [features.md](features.md) troubleshooting section
 
 **"How do I optimize performance?"**
-→ [PRODUCTION.md](PRODUCTION.md) Performance Tuning section
+→ [production.md](production.md) Performance Tuning section
 
 ---
 
@@ -177,12 +177,12 @@ Set up monitoring and auto-restart
 | Document | Lines | Time | Audience |
 |----------|-------|------|----------|
 | README.md | ~260 | 5 min | Everyone |
-| QUICKSTART.md | ~280 | 10 min | Beginners |
-| FEATURES.md | ~450 | 30 min | Users |
-| ARCHITECTURE.md | ~500 | 45 min | Developers |
-| API.md | ~900 | 60 min | Programmers |
-| TESTING.md | ~650 | 30 min | QA/Developers |
-| PRODUCTION.md | ~750 | 45 min | DevOps |
+| quickstart.md | ~280 | 10 min | Beginners |
+| features.md | ~450 | 30 min | Users |
+| architecture.md | ~500 | 45 min | Developers |
+| api.md | ~900 | 60 min | Programmers |
+| testing.md | ~650 | 30 min | QA/Developers |
+| production.md | ~750 | 45 min | DevOps |
 | **TOTAL** | **~3,800** | **~225 min** | **Comprehensive** |
 
 ---
@@ -192,62 +192,62 @@ Set up monitoring and auto-restart
 ### Quick Links by Topic
 
 **Getting Started**
-- QUICKSTART.md → Step 1-5
+- quickstart.md → Step 1-5
 - README.md → Installation Summary
 
 **Audio Features**
-- FEATURES.md → Sections 1-7
-- API.md → AudioEngine, NoteGenerator, EffectsChain
+- features.md → Sections 1-7
+- api.md → AudioEngine, NoteGenerator, EffectsChain
 
 **Instruments**
-- FEATURES.md → Multiple Instrument Models
-- API.md → InstrumentModels
-- ARCHITECTURE.md → Synthesis Algorithm
+- features.md → Multiple Instrument Models
+- api.md → InstrumentModels
+- architecture.md → Synthesis Algorithm
 
 **MIDI**
-- FEATURES.md → MIDI Output
-- API.md → MIDIOutput
-- PRODUCTION.md → DAW Integration
+- features.md → MIDI Output
+- api.md → MIDIOutput
+- production.md → DAW Integration
 
 **Recording**
-- FEATURES.md → WAV Recording
-- API.md → AudioRecorder
-- TESTING.md → Test 4: Recording
+- features.md → WAV Recording
+- api.md → AudioRecorder
+- testing.md → Test 4: Recording
 
 **Web Dashboard**
-- FEATURES.md → Web-Based Remote Control
-- API.md → WebController
-- ARCHITECTURE.md → Thread Model
+- features.md → Web-Based Remote Control
+- api.md → WebController
+- architecture.md → Thread Model
 
 **Deployment**
-- PRODUCTION.md → All sections
-- TESTING.md → CI/CD Testing
-- QUICKSTART.md → Troubleshooting
+- production.md → All sections
+- testing.md → CI/CD Testing
+- quickstart.md → Troubleshooting
 
 ---
 
 ## 💡 Pro Tips
 
-1. **For first-time users**: Skip to [QUICKSTART.md](QUICKSTART.md) - don't read this file first!
+1. **For first-time users**: Skip to [quickstart.md](quickstart.md) - don't read this file first!
 
-2. **For code review**: Read [ARCHITECTURE.md](ARCHITECTURE.md) design patterns first, then examine actual code
+2. **For code review**: Read [architecture.md](architecture.md) design patterns first, then examine actual code
 
 3. **For troubleshooting**: Follow this order:
-   - Check [QUICKSTART.md](QUICKSTART.md) troubleshooting
-   - Check [FEATURES.md](FEATURES.md) feature-specific section
-   - Check [TESTING.md](TESTING.md) for test cases
-   - Run diagnostics from [PRODUCTION.md](PRODUCTION.md)
+   - Check [quickstart.md](quickstart.md) troubleshooting
+   - Check [features.md](features.md) feature-specific section
+   - Check [testing.md](testing.md) for test cases
+   - Run diagnostics from [production.md](production.md)
 
 4. **For performance optimization**:
-   - Read [ARCHITECTURE.md](ARCHITECTURE.md) Performance section
-   - Review [PRODUCTION.md](PRODUCTION.md) Performance Tuning
-   - Run profiling examples from [TESTING.md](TESTING.md)
+   - Read [architecture.md](architecture.md) Performance section
+   - Review [production.md](production.md) Performance Tuning
+   - Run profiling examples from [testing.md](testing.md)
 
 5. **For extending the system**:
-   - Read [ARCHITECTURE.md](ARCHITECTURE.md) for patterns
-   - Check [API.md](API.md) for existing interfaces
-   - Look at [TESTING.md](TESTING.md) for examples
-   - Use [PRODUCTION.md](PRODUCTION.md) for deployment
+   - Read [architecture.md](architecture.md) for patterns
+   - Check [api.md](api.md) for existing interfaces
+   - Look at [testing.md](testing.md) for examples
+   - Use [production.md](production.md) for deployment
 
 ---
 
@@ -261,40 +261,40 @@ Question Arises
          ├─ Yes: Find your path above
          └─ No: Continue
              ↓
-             └─ Check QUICKSTART.md
+             └─ Check quickstart.md
                 (Is this about setup/installation?)
                 ├─ Yes: Follow steps
                 └─ No: Continue
                     ↓
-                    └─ Check FEATURES.md
+                    └─ Check features.md
                        (Is this about "what can I do?")
                        ├─ Yes: Read feature section
                        └─ No: Continue
                            ↓
-                           └─ Check ARCHITECTURE.md
+                           └─ Check architecture.md
                               (Is this about "how does it work?")
                               ├─ Yes: Read design section
                               └─ No: Continue
                                   ↓
-                                  └─ Check API.md
+                                  └─ Check api.md
                                      (Is this about using a function?)
                                      ├─ Yes: Find function in API
                                      └─ No: Continue
                                          ↓
-                                         └─ Check TESTING.md
+                                         └─ Check testing.md
                                             (Does a test cover this?)
                                             ├─ Yes: Review test code
-                                            └─ No: Check PRODUCTION.md
+                                            └─ No: Check production.md
 ```
 
 ---
 
 ## 🚀 Next Steps
 
-1. **First time?** → Start with [QUICKSTART.md](QUICKSTART.md)
-2. **Want to learn?** → Read [FEATURES.md](FEATURES.md) and [ARCHITECTURE.md](ARCHITECTURE.md)
-3. **Want to code?** → Use [API.md](API.md) and [TESTING.md](TESTING.md)
-4. **Want to deploy?** → Follow [PRODUCTION.md](PRODUCTION.md)
+1. **First time?** → Start with [quickstart.md](quickstart.md)
+2. **Want to learn?** → Read [features.md](features.md) and [architecture.md](architecture.md)
+3. **Want to code?** → Use [api.md](api.md) and [testing.md](testing.md)
+4. **Want to deploy?** → Follow [production.md](production.md)
 5. **Need help?** → Use the support workflow above
 
 ---
@@ -313,4 +313,5 @@ Question Arises
 ---
 
 **Ready to get started? Pick a guide above and jump in!** 🚀
+
 

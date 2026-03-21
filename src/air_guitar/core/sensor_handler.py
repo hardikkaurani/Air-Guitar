@@ -7,8 +7,8 @@ from typing import Callable, Optional
 from queue import Queue
 
 from .exceptions import SerialConnectionError, SensorCalibrationError
-from utils.logger import setup_logger
-from utils.validators import validate_port, validate_angle, validate_force
+from ..utils.logger import setup_logger
+from ..utils.validators import validate_port, validate_angle, validate_force
 
 logger = setup_logger(__name__)
 
