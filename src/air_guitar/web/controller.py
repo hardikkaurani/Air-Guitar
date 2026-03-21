@@ -4,7 +4,7 @@ from flask import Flask, render_template, jsonify, request
 from typing import Optional, Callable, Dict, Any
 import threading
 
-from utils.logger import setup_logger
+from ..utils.logger import setup_logger
 
 logger = setup_logger(__name__)
 
@@ -115,7 +115,7 @@ class WebController:
             """List available instruments."""
             # Dynamically load from instruction models
             try:
-                from core.instrument_models import InstrumentFactory
+                from ..core.instrument_models import InstrumentFactory
                 models = InstrumentFactory.list_models()
                 return jsonify({'instruments': models})
             except:

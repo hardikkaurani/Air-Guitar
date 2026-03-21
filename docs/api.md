@@ -11,10 +11,10 @@ Complete API documentation for all modules.
 #### Initialization
 
 ```python
-from core.audio_engine import AudioEngine
+from src.air_guitar.core.audio_engine import AudioEngine
 import yaml
 
-with open('config.yaml') as f:
+with open('config/config.yaml') as f:
     config = yaml.safe_load(f)
 
 engine = AudioEngine(
@@ -127,7 +127,7 @@ if engine.is_running():
 #### Initialization
 
 ```python
-from core.sensor_handler import SensorHandler
+from src.air_guitar.core.sensor_handler import SensorHandler
 
 handler = SensorHandler(
     port='COM3',          # Windows
@@ -180,7 +180,7 @@ handler.stop()  # Closes serial port, stops thread
 #### Initialization
 
 ```python
-from core.chord_engine import ChordEngine
+from src.air_guitar.core.chord_engine import ChordEngine
 
 engine = ChordEngine(
     num_strings=6,
@@ -237,7 +237,7 @@ engine.angle_tolerance_chord = 5.0  # Wider range
 #### Basic Synthesis
 
 ```python
-from core.note_generator import KarplusStrongSynthesizer
+from src.air_guitar.core.note_generator import KarplusStrongSynthesizer
 
 synth = KarplusStrongSynthesizer(
     sample_rate=44100,
@@ -295,7 +295,7 @@ vibrato = synth.generate_vibrato(
 #### Initialization
 
 ```python
-from core.effects import EffectsChain
+from src.air_guitar.core.effects import EffectsChain
 
 effects = EffectsChain()
 # Automatically includes Reverb, Delay, Distortion
@@ -353,7 +353,7 @@ wet_level = effects.get_parameter('reverb', 'wet_level')
 #### Using Factory Pattern
 
 ```python
-from core.instrument_models import InstrumentFactory
+from src.air_guitar.core.instrument_models import InstrumentFactory
 
 # Create instrument by name
 instrument = InstrumentFactory.create(
@@ -399,7 +399,7 @@ classic.brightness = 0.85       # Brighter tone
 #### Initialization
 
 ```python
-from core.midi_output import MIDIOutput
+from src.air_guitar.core.midi_output import MIDIOutput
 
 midi = MIDIOutput(
     device_index=None,    # None = default system output
@@ -478,7 +478,7 @@ midi.close()              # Close port
 #### Initialization
 
 ```python
-from core.recorder import AudioRecorder
+from src.air_guitar.core.recorder import AudioRecorder
 
 recorder = AudioRecorder(
     output_folder='./recordings',
@@ -532,7 +532,7 @@ size_mb = size_bytes / (1024*1024)
 #### Running the Server
 
 ```python
-# In config.yaml:
+# In config/config.yaml:
 web:
   enabled: true
   host: "0.0.0.0"         # 0.0.0.0 = accept all external connections
@@ -628,13 +628,13 @@ Complete example tying all modules together:
 
 ```python
 import yaml
-from core.audio_engine import AudioEngine
-from core.sensor_handler import SensorHandler
-from core.chord_engine import ChordEngine
-from web.controller import WebController
+from src.air_guitar.core.audio_engine import AudioEngine
+from src.air_guitar.core.sensor_handler import SensorHandler
+from src.air_guitar.core.chord_engine import ChordEngine
+from src.air_guitar.web.controller import WebController
 
 # Load configuration
-with open('config.yaml') as f:
+with open('config/config.yaml') as f:
     config = yaml.safe_load(f)
 
 # Initialize all components
@@ -689,4 +689,5 @@ while running:
 ---
 
 **Full API coverage for all production features.**
+
 

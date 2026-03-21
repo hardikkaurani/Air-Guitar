@@ -1,49 +1,73 @@
-# 🎸 Air Guitar Project
+# Air Guitar
 
-## About the Project
-This project is called **Air Guitar**.  
-The idea behind this project is simple - to play guitar sounds using **hand gestures** instead of a real guitar.
+Air Guitar is a gesture-controlled instrument system that turns wrist motion and strum force into real-time synthesized audio. It combines Arduino sensor input, a modular Python audio engine, configurable effects, optional MIDI output, session recording, and a lightweight web dashboard for control and monitoring.
 
-Using a webcam, the system detects hand movements in real time and plays guitar sounds based on finger positions.  
-No physical instrument is required. Everything works through computer vision.
+## Why This Repo Exists
 
-I built this project to understand how **OpenCV**, **hand tracking**, and **real-time video processing** work together in a practical way.
+This repository is structured like a real software project rather than a one-file prototype. The goal is to show production-minded engineering around a creative hardware/software build:
 
----
+- modular application architecture
+- isolated domain components for audio, sensing, and control
+- clear configuration and documentation boundaries
+- test coverage for core audio behavior
+- room for future packaging, deployment, and feature growth
 
-## Why I Made This Project
-I wanted to try something fun while learning computer vision.  
-Instead of doing a basic project, I chose Air Guitar because it combines:
-- real-time processing  
-- gesture recognition  
-- sound generation  
+## Highlights
 
-This project helped me understand how humans can interact with computers using gestures.
+- Real-time gesture-to-note triggering from Arduino sensor data
+- Polyphonic audio engine with Karplus-Strong synthesis
+- Multiple instrument models and configurable effects
+- MIDI output support for DAW integration
+- WAV recording for captured sessions
+- Optional Flask-based monitoring and control UI
 
----
+## Repository Layout
 
-## Technologies Used
-- Python  
-- OpenCV  
-- MediaPipe  
-- NumPy  
-- Pygame  
+```text
+.
+|-- config/
+|   `-- config.yaml
+|-- docs/
+|   |-- architecture.md
+|   |-- api.md
+|   |-- docs-index.md
+|   |-- features.md
+|   |-- production.md
+|   |-- quickstart.md
+|   `-- testing.md
+|-- hardware/
+|   `-- arduino_code.ino
+|-- src/
+|   `-- air_guitar/
+|       |-- app.py
+|       |-- core/
+|       |-- utils/
+|       `-- web/
+|-- tests/
+|   `-- test_audio_engine.py
+|-- .gitignore
+|-- main.py
+|-- pyproject.toml
+`-- requirements.txt
+```
 
----
-
-## How the Project Works
-1. The webcam captures live video  
-2. Hand landmarks are detected using MediaPipe  
-3. Finger positions are tracked  
-4. Based on the gesture, guitar sounds are played  
-
-Everything happens in real time.
-
----
-
-## How to Run the Project
-Make sure Python is installed on your system.
+## Getting Started
 
 ```bash
 pip install -r requirements.txt
-python air_guitar.py
+python main.py
+```
+
+Update `config/config.yaml` with the correct serial port before starting the system.
+
+## Documentation
+
+- [Quickstart](docs/quickstart.md)
+- [Architecture](docs/architecture.md)
+- [API](docs/api.md)
+- [Testing](docs/testing.md)
+- [Production Notes](docs/production.md)
+
+## Tech Stack
+
+Python, NumPy, PySerial, SoundDevice, SoundFile, Flask, PyYAML, and Arduino-based motion sensing.

@@ -110,7 +110,7 @@ midi:
 
 #### Setup
 
-1. **Enable MIDI** in config.yaml
+1. **Enable MIDI** in config/config.yaml
 2. **Choose Output Device:**
    - Disable on `null` = uses system default
    - Use `LoopBe1` (Windows) or `IAC` (macOS) for DAW routing
@@ -233,7 +233,7 @@ Full-featured dashboard for control and monitoring.
 
 #### Accessing Web UI
 
-1. **Enable in config.yaml:**
+1. **Enable in config/config.yaml:**
    ```yaml
    web:
      enabled: true
@@ -259,7 +259,7 @@ Edit `web/templates/index.html` to customize:
 #### Production Setup (Full Features)
 
 ```yaml
-# config.yaml - Full featured setup
+# config/config.yaml - Full featured setup
 audio:
   sample_rate: 44100
   buffer_frames: 2048
@@ -385,4 +385,5 @@ print(f"Available MIDI outputs: {ports}")
 ---
 
 **All features working? Time to make some music!** 🎵
+
 

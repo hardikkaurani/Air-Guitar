@@ -3,7 +3,7 @@ import numpy as np
 from collections import deque
 import logging
 
-from utils.logger import setup_logger
+from ..utils.logger import setup_logger
 
 logger = setup_logger(__name__)
 

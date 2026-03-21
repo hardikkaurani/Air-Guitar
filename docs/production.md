@@ -15,9 +15,9 @@ Deploy Air Guitar for real-world use.
 ### Software
 - [ ] Python 3.8+ installed with venv
 - [ ] All dependencies installed via pip
-- [ ] `config.yaml` has correct COM port
+- [ ] `config/config.yaml` has correct COM port
 - [ ] All tests passing (`pytest tests/ -v`)
-- [ ] QUICKSTART.md verified manually
+- [ ] quickstart.md verified manually
 - [ ] Audio output tested (speakers/headphones)
 
 ### Performance
@@ -63,7 +63,7 @@ pip install pyinstaller
 
 # Create standalone executable
 pyinstaller --onefile \
-  --add-data "config.yaml:." \
+  --add-data "config/config.yaml:." \
   --add-data "templates:templates" \
   --hidden-import=rtmidi \
   main.py
@@ -93,7 +93,7 @@ Users run: `main.exe` (no Python installation needed)
 
 1. On Air Guitar machine:
 ```yaml
-# config.yaml
+# config/config.yaml
 web:
   host: "0.0.0.0"        # Accept all connections
   port: 5000
@@ -133,7 +133,7 @@ OBS → YouTube/Twitch Live Stream
 ### High-Reliability Config
 
 ```yaml
-# config.yaml - Production
+# config/config.yaml - Production
 audio:
   sample_rate: 44100      # CD quality
   buffer_frames: 4096     # Stable, less glitchy
@@ -175,7 +175,7 @@ web:
 ### High-Performance Config (Low Latency)
 
 ```yaml
-# config.yaml - Gaming/VR
+# config/config.yaml - Gaming/VR
 audio:
   sample_rate: 44100
   buffer_frames: 512      # Low latency (~12ms)
@@ -341,10 +341,10 @@ while True:
 
 ```bash
 # Backup before deployment
-cp config.yaml config.yaml.backup.$(date +%Y%m%d_%H%M%S)
+cp config/config.yaml config/config.yaml.backup.$(date +%Y%m%d_%H%M%S)
 
 # Restore if needed
-cp config.yaml.backup.20240319_120530 config.yaml
+cp config/config.yaml.backup.20240319_120530 config/config.yaml
 ```
 
 ### Recording Backup
@@ -362,7 +362,7 @@ rclone sync ./recordings dropbox:air_guitar_backups
 ```sh
 # Create version snapshot
 tar -czf air_guitar_$(date +%Y%m%d).tar.gz \
-  main.py core/ web/ config.yaml requirements.txt
+  main.py core/ web/ config/config.yaml requirements.txt
 ```
 
 ---
@@ -494,7 +494,7 @@ type air_guitar.log | tail -50
 ```
 
 **Common causes:**
-- Wrong COM port → Update config.yaml
+- Wrong COM port → Update config/config.yaml
 - Missing dependency → pip install -r requirements.txt
 - Arduino not connected → Check USB cable
 
@@ -603,7 +603,7 @@ python main.py                    # Run old version
 - [ ] Check disk space (recordings folder)
 - [ ] Review logs for errors
 - [ ] Test MIDI with DAW
-- [ ] Backup config.yaml
+- [ ] Backup config/config.yaml
 - [ ] Update dependencies: `pip list --outdated`
 
 ### Quarterly Reviews
@@ -619,4 +619,5 @@ python main.py                    # Run old version
 **Your Air Guitar is now production-ready!**
 
 Questions? Refer to README.md or open an issue on GitHub.
+
 
