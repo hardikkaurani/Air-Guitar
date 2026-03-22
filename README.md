@@ -127,12 +127,6 @@ python air_guitar.py
 
 ---
 
-## 📸 Demo
-
-(Add a demo video or GIF here to showcase the system)
-
----
-
 ## 🎯 Use Cases
 
 * Gesture-based interaction systems
